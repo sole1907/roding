@@ -1,0 +1,292 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/activity_submit_claim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rodingtransparentbg"
+        android:paddingBottom="3dp"
+        tools:context=".activity.HospitalLocatorActivity">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar_2" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/app_bar"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:id="@+id/search_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/attendance_date"
+                        style="@style/textfield_rec_style"
+                        android:layout_width="match_parent"
+                        android:hint="@string/attendance_date" />
+
+                    <EditText
+                        android:id="@+id/member_id"
+                        style="@style/textfield_rec_style"
+                        android:layout_width="match_parent"
+                        android:hint="@string/member_id" />
+
+                    <EditText
+                        android:id="@+id/diagnosis"
+                        style="@style/textfield_rec_style"
+                        android:layout_width="match_parent"
+                        android:hint="@string/diagnosis" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/details_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/full_name"
+                        style="@style/textfield_rec_style"
+                        android:layout_width="match_parent"
+                        android:enabled="false"
+                        android:hint="@string/full_name"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/medication"
+                        style="@style/textfield_rec_style"
+                        android:layout_width="match_parent"
+                        android:hint="@string/medication" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/amount"
+                            style="@style/textfield_rec_style"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:hint="@string/unit_amount"
+                            android:inputType="numberDecimal" />
+
+                        <EditText
+                            android:id="@+id/quantity"
+                            style="@style/textfield_rec_style"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="@string/qty"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/addBtn"
+                            style="@style/button_style"
+                            android:layout_width="match_parent"
+                            android:text="@string/add" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/summary_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:background="@drawable/border"
+                        android:enabled="false"
+                        android:padding="7dp"
+                        android:text="@string/hospital_details"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/hospital_id_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/border"
+                        android:enabled="false"
+                        android:padding="7dp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/border"
+                        android:enabled="false"
+                        android:padding="7dp"
+                        android:text="@string/patient_details"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/patient_id_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/border"
+                        android:enabled="false"
+                        android:padding="7dp"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:paddingTop="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1.6"
+                                android:background="@drawable/border"
+                                android:enabled="false"
+                                android:padding="5dp"
+                                android:text="@string/medication"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border"
+                                android:enabled="false"
+                                android:padding="5dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/border"
+                                android:enabled="false"
+                                android:padding="5dp"
+                                android:text="@string/total_price"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_view_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.6"
+                                android:enabled="false"
+                                android:padding="5dp"
+                                android:text="@string/total"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/total_amount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/leftrightbottom"
+                                android:enabled="false"
+                                android:padding="5dp"
+                                android:text="2000"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/entered_by_text"
+                            style="@style/textfield_rec_style"
+                            android:layout_width="match_parent" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/enteredBy"
+                        style="@style/textfield_rec_style"
+                        android:layout_width="match_parent"
+                        android:hint="@string/entered_by"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/sendBtn"
+                        style="@style/button_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/send" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fragment_navigation_drawer"
+        android:name="roding.soconcepts.com.roding.fragment.NavigationDrawerFragment"
+        android:layout_width="@dimen/nav_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout>

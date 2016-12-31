@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="@android:color/transparent"
+    android:id="@+id/hospitalview_row">
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:background="@drawable/mapicon"  />
+    <LinearLayout
+        android:id="@+id/description_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iv_image"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp">
+        <TextView
+            android:id="@+id/tv_hospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/btn_directions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/get_directions"
+            style="@style/button_style"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+</RelativeLayout>

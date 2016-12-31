@@ -1,0 +1,128 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/socials_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingBottom="3dp"
+        tools:context=".activity.SocialsActivity">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar_2" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/app_bar"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:id="@+id/roding_id_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/connect"
+                    android:layout_marginTop="45dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="0dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:adjustViewBounds="true"
+                            android:paddingRight="15dp"
+                            android:text="@string/connect_with_us"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="italic" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/logo" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="45dp"
+                        android:layout_marginRight="45dp"
+                        android:padding="0dp">
+
+                        <Button
+                            android:id="@+id/facebookBtn"
+                            style="@style/button_style"
+                            android:padding="15dp"
+                            android:background="@drawable/button_fb"
+                            android:drawableLeft="@drawable/facebook_icon"
+                            android:text="@string/connect_to_fb" />
+
+                        <Button
+                            android:id="@+id/twitterBtn"
+                            android:padding="15dp"
+                            android:drawableLeft="@drawable/twitter_icon"
+                            android:background="@drawable/button_tw"
+                            style="@style/button_style"
+                            android:text="@string/connect_to_tw" />
+
+                        <Button
+                            android:id="@+id/linkedinBtn"
+                            android:background="@drawable/button_linkedin"
+                            android:padding="15dp"
+                            android:drawableLeft="@drawable/linkedin_icon"
+                            style="@style/button_style"
+                            android:text="@string/connect_to_linkedin" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/connect"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/family" />
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fragment_navigation_drawer"
+        android:name="roding.soconcepts.com.roding.fragment.NavigationDrawerFragment"
+        android:layout_width="@dimen/nav_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout>
